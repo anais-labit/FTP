@@ -24,13 +24,14 @@ done</home/anais/Downloads/Shell_Userlist.csv
 
 
 
-créer un groupe les mettre tous dedans
-et dans ftp les autoriser seulement eux
+# Pour le job9 de FTP :
+# créer un groupe les mettre tous dedans
+# et dans ftp les autoriser seulement eux
 
 
 
 
-
+# Script pour supprimer tous les users crées :
 # #!/bin/bash
 
 

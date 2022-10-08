@@ -1,45 +1,23 @@
 #!/bin/bash
 
-
-# à faire tant qu'il reste des lignes à parcourir
+# tant qu'il reste des lignes à parcourir, assigner des valeurs aux champs repérés (séparés par des virgules) :
 while IFS="," read -r Id Prenom Nom Mdp Role
-#Role= grep Adm
 
 do
-    # echo $Id
     # créer utilisateurs
-        # si admin, superutilisateur
+
+        # si admin, superutilisateur :
         if [ ${Role:0:5} = "Admin" ]; then 
-            useradd --password $Mdp --badnames $Prenom 
-            usermod -aG sudo $Prenom
+            useradd -m --password $Mdp --badnames $Prenom --g nogroup -G sudo
 
         #sinon, utilisateur normal :
         else 
-            useradd --password $Mdp --badnames $Prenom 
+            useradd -m --password $Mdp --badnames $Prenom --g nogroup
 
         fi        
 
+echo "Editing for user $Prenom ..." ; echo "Done."
+
 done</home/anais/Downloads/Shell_Userlist.csv
 
-
-
-
-# Pour le job9 de FTP :
-# créer un groupe les mettre tous dedans
-# et dans ftp les autoriser seulement eux
-
-
-
-
-# Script pour supprimer tous les users crées :
-# #!/bin/bash
-
-
-# # à faire tant qu'il reste des lignes à parcourir
-# while IFS="," read -r Id Prenom Nom Mdp Role
-# #Role= grep Adm
-
-# do
-#    deluser $Prenom
-   
-# done</home/anais/Downloads/Shell_Userlist.csv
+# Pourquoi "nogroup"? Parce que c'est le groupe par défaut dans proftpd.conf

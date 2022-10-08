@@ -16,7 +16,7 @@ do
 
         fi        
 
-echo "Editing for user $Prenom ..." ; echo "Done."
+echo "Editing user $Prenom ..." ; echo "Done."
 
 done</home/anais/Downloads/Shell_Userlist.csv
 

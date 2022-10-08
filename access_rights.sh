@@ -8,11 +8,11 @@ do
 
         # si admin, superutilisateur :
         if [ ${Role:0:5} = "Admin" ]; then 
-            useradd -m --password $Mdp --badnames $Prenom --g nogroup -G sudo
+            useradd -m --password $Mdp --badnames $Prenom -g nogroup -G sudo
 
         #sinon, utilisateur normal :
         else 
-            useradd -m --password $Mdp --badnames $Prenom --g nogroup
+            useradd -m --password $Mdp --badnames $Prenom -g nogroup
 
         fi        
 
